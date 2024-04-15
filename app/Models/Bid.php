@@ -13,7 +13,7 @@ class Bid extends Model
 
     public function propiedad()
     {
-        return $this->belongsTo(Propiedad::class);
+        return $this->belongsTo(Propiedades::class);
     }
 
     public function user()

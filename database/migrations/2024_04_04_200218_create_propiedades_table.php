@@ -17,10 +17,10 @@ return new class extends Migration
             $table->text('descripcion');
             $table->decimal('precio', 10, 2);
             $table->string('direccion');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('cliente_id')->nullable();
             $table->string('imagen')->nullable(); // Campo para la ruta de la imagen
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('cliente_id')->references('id')->on('clientes')->onDelete('cascade');
         });
     }
 

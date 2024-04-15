@@ -21,8 +21,8 @@ class PropiedadFactory extends Factory
             'descripcion' => $this->faker->paragraph,
             'precio' => $this->faker->numberBetween(10000, 500000),
             'direccion' => $this->faker->address,
-            'user_id' => \App\Models\User::factory(), // Asegúrate de tener un UserFactory para relacionar
-            'imagen' => $this->faker->imageUrl(640, 480, 'propiedades', true),
+            //'cliente_id' => \App\Models\cliente::factory(), // Asegúrate de tener un UserFactory para relacionar
+            //'imagen' => $this->faker->imageUrl(640, 480, 'propiedades', true),
         ];
     }
 }

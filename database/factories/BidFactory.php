@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Bid;
-use App\Models\Propiedad;
+use App\Models\Propiedades;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -26,8 +26,8 @@ class BidFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => \App\Models\User::factory(),
-          //  'propiedad_id' => Propiedad::factory(),
+            'cliente_id' => \App\Models\User::factory(),
+             'propiedad_id' => Propiedades::factory(),
             'monto' => $this->faker->numberBetween(10000, 500000), // Genera un monto aleatorio entre 10,000 y 500,000
         ];
     }

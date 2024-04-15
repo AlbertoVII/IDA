@@ -2,17 +2,16 @@
 
 namespace Database\Seeders;
 
-use App\Models\Propiedades;
-use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
 
-class PropiedadSeeder extends Seeder
+class ClientesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Propiedades::factory(10)->create();
+        \App\Models\Cliente::factory(10)->create();
     }
 }
