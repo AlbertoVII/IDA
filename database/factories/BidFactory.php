@@ -2,19 +2,21 @@
 
 namespace Database\Factories;
 
+use App\Models\Bid;
+use App\Models\Propiedad;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Puja>
  */
-class PujaFactory extends Factory
+class BidFactory extends Factory
 {
      /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Puja::class;
+    protected $model = Bid::class;
 
     /**
      * Define the model's default state.
@@ -25,7 +27,7 @@ class PujaFactory extends Factory
     {
         return [
             'user_id' => \App\Models\User::factory(),
-            'propiedad_id' => \App\Models\Propiedad::factory(),
+          //  'propiedad_id' => Propiedad::factory(),
             'monto' => $this->faker->numberBetween(10000, 500000), // Genera un monto aleatorio entre 10,000 y 500,000
         ];
     }
