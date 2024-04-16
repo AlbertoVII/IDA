@@ -7,28 +7,13 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
+<link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
 
-<link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css')}}">
-<link rel="stylesheet" href="{{ asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
-<link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css?v=3.2.0')}}">
+<link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
 
-
-<script src="{{ asset('plugins/jquery/jquery.min.js')}}"></script>
-<script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-
-
-
+<link rel="stylesheet" href="../../dist/css/adminlte.min.css?v=3.2.0">
 <script nonce="b4bc1ee1-8bed-4b89-bb4b-54d4176777f9">try{(function(w,d){!function(dr,ds,dt,du){dr[dt]=dr[dt]||{};dr[dt].executed=[];dr.zaraz={deferred:[],listeners:[]};dr.zaraz.q=[];dr.zaraz._f=function(dv){return async function(){var dw=Array.prototype.slice.call(arguments);dr.zaraz.q.push({m:dv,a:dw})}};for(const dx of["track","set","debug"])dr.zaraz[dx]=dr.zaraz._f(dx);dr.zaraz.init=()=>{var dy=ds.getElementsByTagName(du)[0],dz=ds.createElement(du),dA=ds.getElementsByTagName("title")[0];dA&&(dr[dt].t=ds.getElementsByTagName("title")[0].text);dr[dt].x=Math.random();dr[dt].w=dr.screen.width;dr[dt].h=dr.screen.height;dr[dt].j=dr.innerHeight;dr[dt].e=dr.innerWidth;dr[dt].l=dr.location.href;dr[dt].r=ds.referrer;dr[dt].k=dr.screen.colorDepth;dr[dt].n=ds.characterSet;dr[dt].o=(new Date).getTimezoneOffset();if(dr.dataLayer)for(const dE of Object.entries(Object.entries(dataLayer).reduce(((dF,dG)=>({...dF[1],...dG[1]})),{})))zaraz.set(dE[0],dE[1],{scope:"page"});dr[dt].q=[];for(;dr.zaraz.q.length;){const dH=dr.zaraz.q.shift();dr[dt].q.push(dH)}dz.defer=!0;for(const dI of[localStorage,sessionStorage])Object.keys(dI||{}).filter((dK=>dK.startsWith("_zaraz_"))).forEach((dJ=>{try{dr[dt]["z_"+dJ.slice(7)]=JSON.parse(dI.getItem(dJ))}catch{dr[dt]["z_"+dJ.slice(7)]=dI.getItem(dJ)}}));dz.referrerPolicy="origin";dz.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(dr[dt])));dy.parentNode.insertBefore(dz,dy)};["complete","interactive"].includes(ds.readyState)?zaraz.init():dr.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document)}catch(e){throw fetch("/cdn-cgi/zaraz/t"),e;};</script></head>
 <body class="hold-transition login-page">
-
-    <x-validation-errors class="mb-4" />
-
-        @session('status')
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ $value }}
-            </div>
-        @endsession
-
 <div class="login-box">
 <div class="login-logo">
 <a href="../../index2.html"><b>Inmobiliaria BEADE</b></a>
@@ -37,12 +22,9 @@
 <div class="card">
 <div class="card-body login-card-body">
 <p class="login-box-msg">Inicio de sesión</p>
-<form method="POST" action="{{ route('login') }}">
-            @csrf
+<form action="../../index3.html" method="post">
 <div class="input-group mb-3">
-    <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-    
+<input type="email" class="form-control" placeholder="Email">
 <div class="input-group-append">
 <div class="input-group-text">
 <span class="fas fa-envelope"></span>
@@ -50,8 +32,7 @@
 </div>
 </div>
 <div class="input-group mb-3">
-    <x-label for="password" value="{{ __('Password') }}" />
-    <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+<input type="password" class="form-control" placeholder="Password">
 <div class="input-group-append">
 <div class="input-group-text">
 <span class="fas fa-lock"></span>
@@ -69,9 +50,7 @@ Remember Me -->
 </div>
 
 <div class="col-4">
-    <x-button class="ms-4">
-                    {{ __('Log in') }}
-                </x-button>
+<button type="submit" class="btn btn-primary btn-block">Sign In</button>
 </div>
 
 </div>
