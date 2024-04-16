@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         
         //$this->call(BidSeeder::class);
         //$this->call(UserSeeder::class);
-        //$this->call(PropiedadSeeder::class);
+        $this->call(PropiedadesSeeder::class);
         //($this->call(MensajeSeeder::class);ç
         $this->call(ClientesSeeder::class);
     }

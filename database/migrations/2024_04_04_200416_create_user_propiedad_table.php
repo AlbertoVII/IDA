@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('user_propiedad', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            
+            $table->unsignedBigInteger('cliente_id');
             $table->unsignedBigInteger('propiedad_id');
             $table->timestamps();
         
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('cliente_id')->references('id')->on('clientes')->onDelete('cascade');
             $table->foreign('propiedad_id')->references('id')->on('propiedades')->onDelete('cascade');
         });
         

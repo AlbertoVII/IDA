@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
  * Class Propiedade
@@ -27,6 +28,7 @@ use Illuminate\Database\Eloquent\Model;
 class Propiedades extends Model
 {
     
+    use HasFactory;
 
     protected $perPage = 20;
 

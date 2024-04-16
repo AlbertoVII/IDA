@@ -18,18 +18,14 @@ class UserSeeder extends Seeder
             'name' => 'Alberto',
             'email' => 'albertovillardiaz@yahoo.com',
             'password' => Hash::make('12345678'), // Usa un hash para la contraseña
-            ]);
-        User::factory(10)->create();
+            ])->assignRole('Admin');
 
-        $role1='admin';
-        $role2='cliente';
-        $user= User::find(1);
-        $user->assignRole($role1);
-
-        $otherUsers = User::where('id', '>', 1)->get();
-        foreach ($otherUsers as $user) {
-            $user->assignRole($role2);
-        }
+            User::create([
+                'name' => 'Gilberto',
+                'email' => 'Gilberto@yahoo.com',
+                'password' => Hash::make('12345678'), // Usa un hash para la contraseña
+                ])->assignRole('Cliente');
+      
       //  ->assignRole('Admin')
     }
 }

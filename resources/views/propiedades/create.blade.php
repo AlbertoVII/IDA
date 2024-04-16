@@ -10,7 +10,7 @@
             <div class="col-md-12">
 
                 <div class="card card-default">
-                    <div class="card-header">
+                    <div class="card-header bg-white max-w-7xl mx-auto sm:px-6 lg:px-8">
                         <span class="card-title">{{ __('Create') }} Propiedad</span>
                     </div>
                     <div class="card-body bg-white">

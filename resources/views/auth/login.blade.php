@@ -1,107 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AdminLTE 3 | Log in</title>
+<x-guest-layout>
+ 
+  
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+      <!--
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ],
+  }
+  ```
+-->
+<!--
+  This example requires updating your template:
 
-
-<link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css')}}">
-<link rel="stylesheet" href="{{ asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
-<link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css?v=3.2.0')}}">
-
-
-<script src="{{ asset('plugins/jquery/jquery.min.js')}}"></script>
-<script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-
-
-
-<script nonce="b4bc1ee1-8bed-4b89-bb4b-54d4176777f9">try{(function(w,d){!function(dr,ds,dt,du){dr[dt]=dr[dt]||{};dr[dt].executed=[];dr.zaraz={deferred:[],listeners:[]};dr.zaraz.q=[];dr.zaraz._f=function(dv){return async function(){var dw=Array.prototype.slice.call(arguments);dr.zaraz.q.push({m:dv,a:dw})}};for(const dx of["track","set","debug"])dr.zaraz[dx]=dr.zaraz._f(dx);dr.zaraz.init=()=>{var dy=ds.getElementsByTagName(du)[0],dz=ds.createElement(du),dA=ds.getElementsByTagName("title")[0];dA&&(dr[dt].t=ds.getElementsByTagName("title")[0].text);dr[dt].x=Math.random();dr[dt].w=dr.screen.width;dr[dt].h=dr.screen.height;dr[dt].j=dr.innerHeight;dr[dt].e=dr.innerWidth;dr[dt].l=dr.location.href;dr[dt].r=ds.referrer;dr[dt].k=dr.screen.colorDepth;dr[dt].n=ds.characterSet;dr[dt].o=(new Date).getTimezoneOffset();if(dr.dataLayer)for(const dE of Object.entries(Object.entries(dataLayer).reduce(((dF,dG)=>({...dF[1],...dG[1]})),{})))zaraz.set(dE[0],dE[1],{scope:"page"});dr[dt].q=[];for(;dr.zaraz.q.length;){const dH=dr.zaraz.q.shift();dr[dt].q.push(dH)}dz.defer=!0;for(const dI of[localStorage,sessionStorage])Object.keys(dI||{}).filter((dK=>dK.startsWith("_zaraz_"))).forEach((dJ=>{try{dr[dt]["z_"+dJ.slice(7)]=JSON.parse(dI.getItem(dJ))}catch{dr[dt]["z_"+dJ.slice(7)]=dI.getItem(dJ)}}));dz.referrerPolicy="origin";dz.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(dr[dt])));dy.parentNode.insertBefore(dz,dy)};["complete","interactive"].includes(ds.readyState)?zaraz.init():dr.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document)}catch(e){throw fetch("/cdn-cgi/zaraz/t"),e;};</script></head>
-<body class="hold-transition login-page">
-
-    <x-validation-errors class="mb-4" />
-
-        @session('status')
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ $value }}
-            </div>
-        @endsession
-
-<div class="login-box">
-<div class="login-logo">
-<a href="../../index2.html"><b>Inmobiliaria BEADE</b></a>
-</div>
-
-<div class="card">
-<div class="card-body login-card-body">
-<p class="login-box-msg">Inicio de sesión</p>
-<form method="POST" action="{{ route('login') }}">
-            @csrf
-<div class="input-group mb-3">
-    <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+  ```
+  <html class="h-full bg-white">
+  <body class="h-full">
+  ```
+-->
+<div class="flex min-h-screen">
     
-<div class="input-group-append">
-<div class="input-group-text">
-<span class="fas fa-envelope"></span>
-</div>
-</div>
-</div>
-<div class="input-group mb-3">
-    <x-label for="password" value="{{ __('Password') }}" />
-    <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
-<div class="input-group-append">
-<div class="input-group-text">
-<span class="fas fa-lock"></span>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="col-8">
-<div class="icheck-primary">
-<!-- <input type="checkbox" id="remember">
-<label for="remember">
-Remember Me -->
-</label>
-</div>
-</div>
-
-<div class="col-4">
-    <x-button class="ms-4">
-                    {{ __('Log in') }}
-                </x-button>
-</div>
-
-</div>
-</form>
-<!-- <div class="social-auth-links text-center mb-3">
-<p>- OR -</p>
-<a href="#" class="btn btn-block btn-primary">
-<i class="fab fa-facebook mr-2"></i> Sign in using Facebook
-</a>
-<a href="#" class="btn btn-block btn-danger">
-<i class="fab fa-google-plus mr-2"></i> Sign in using Google+
-</a>
-</div>-->
-
-<p class="mb-1">
-<a href="forgot-password.html">I forgot my password</a>
-</p>
-<p class="mb-0">
-<a href="register.html" class="text-center">Register a new membership</a>
-</p>
-</div> 
-
-</div>
-</div>
-
-
-<script src="../../plugins/jquery/jquery.min.js"></script>
-
-<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<script src="../../dist/js/adminlte.min.js?v=3.2.0"></script>
-</body>
-</html>
+    <!-- Columna del formulario de inicio de sesión -->
+    <div class="w-1/2 bg-cover bg-center py-48">
+      <div class="sm:mx-auto sm:w-full sm:max-w-md">
+        <img class="mx-auto h-12 w-auto" src="{{ asset('images/materia.gif') }}" alt="Your Company">
+        <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+          Sign in to your account
+        </h2>
+      </div>
+  
+      <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+        <form method="POST" action="{{ route('login') }}">
+          @csrf
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+            <input id="email" name="email" type="email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+          </div>
+  
+          <div class="mt-4">
+            <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+            <input id="password" name="password" type="password" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+          </div>
+  
+          <div class="mt-6 flex items-center justify-between">
+            <div class="flex items-center">
+              <input id="remember_me" name="remember_me" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
+              <label for="remember_me" class="ml-2 block text-sm text-gray-900"> Remember me </label>
+            </div>
+  
+            <div class="text-sm">
+              <a href="{{ route('password.request') }}" class="font-medium text-indigo-600 hover:text-indigo-500">Forgot your password?</a>
+            </div>
+          </div>
+  
+          <div class="mt-6">
+            <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+              Sign in
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  
+  
+<div class="w-1/2">
+    <img src="{{ asset('images/house.jpg') }}" class="w-full h-full" alt="Descripción">
+  </div>
+  
+  
+</x-guest-layout>

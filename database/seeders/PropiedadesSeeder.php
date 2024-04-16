@@ -6,7 +6,7 @@ use App\Models\Propiedades;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class PropiedadSeeder extends Seeder
+class PropiedadesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
