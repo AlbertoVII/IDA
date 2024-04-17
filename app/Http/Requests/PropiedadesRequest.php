@@ -26,7 +26,6 @@ class PropiedadesRequest extends FormRequest
 			'descripcion' => 'required|string',
 			'precio' => 'required',
 			'direccion' => 'required|string',
-			'user_id' => 'required',
 			'imagen' => 'string',
         ];
     }

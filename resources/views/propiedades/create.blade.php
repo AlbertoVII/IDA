@@ -10,10 +10,10 @@
             <div class="col-md-12">
 
                 <div class="card card-default">
-                    <div class="card-header bg-white max-w-7xl mx-auto sm:px-6 lg:px-8">
+                    <div class="card-header bg-white max-w-7xl mx-auto sm:px-6 lg:px-8 py-5">
                         <span class="card-title">{{ __('Create') }} Propiedad</span>
                     </div>
-                    <div class="card-body bg-white">
+                    <div class="card-body bg-white py-7">
                         <form method="POST" action="{{ route('propiedades.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 

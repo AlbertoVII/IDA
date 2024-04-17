@@ -10,16 +10,15 @@ Route::get('/', function () {
     return redirect('/login');
 });
 
+
 Route::resource('propiedades', PropiedadesController::class);
 
-
-Route::get('propiedades', [PropiedadesController::class, 'index'])->name('propiedades');
 
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
-])->group(function () {
+    ])->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/dashboard', function () {
         return view('dashboard');

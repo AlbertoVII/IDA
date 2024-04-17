@@ -36,6 +36,7 @@ class PropiedadesController extends Controller
      */
     public function store(PropiedadesRequest $request)
     {
+        
         Propiedades::create($request->validated());
 
         return redirect()->route('propiedades.index')
@@ -49,7 +50,7 @@ class PropiedadesController extends Controller
     {
         $propiedad = Propiedades::find($id);
 
-        return view('propiedade.show', compact('propiedad'));
+        return view('propiedades.show', compact('propiedad'));
     }
 
     /**
@@ -59,7 +60,7 @@ class PropiedadesController extends Controller
     {
         $propiedad = Propiedades::find($id);
 
-        return view('propiedade.edit', compact('propiedad'));
+        return view('propiedades.edit', compact('propiedad'));
     }
 
     /**

@@ -14,11 +14,11 @@
                         <span class="card-title">{{ __('Update') }} propiedad</span>
                     </div>
                     <div class="card-body bg-white">
-                        <form method="POST" action="{{ route('propiedads.update', $propiedad->id) }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('propiedades.update', $propiedad->id) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
 
-                            @include('propiedad.form')
+                            @include('propiedades.form')
 
                         </form>
                     </div>
