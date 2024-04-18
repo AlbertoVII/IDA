@@ -14,7 +14,7 @@
 
                             <span id="card_title">
                                 
-                                {{ __('Propiedades') }} ssss
+                                {{ __('Propiedades') }} 
                             </span>
 
                              <div class="float-right">

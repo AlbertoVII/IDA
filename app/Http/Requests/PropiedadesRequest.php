@@ -22,11 +22,10 @@ class PropiedadesRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'titulo' => 'required|string',
-			'descripcion' => 'required|string',
-			'precio' => 'required',
-			'direccion' => 'required|string',
-			'imagen' => 'string',
+			'title' => 'required|string',
+        'description' => 'required|string',
+        'price' => 'required|numeric',
+        'images.*' => 'image|mimes:jpg,jpeg,png,gif|max:10240',
         ];
     }
 }

@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
         //$this->call(BidSeeder::class);
         //$this->call(UserSeeder::class);
         $this->call(PropiedadesSeeder::class);
-        //($this->call(MensajeSeeder::class);ç
+        $this->call(RoleSeeder::class);
         $this->call(ClientesSeeder::class);
     }
 }

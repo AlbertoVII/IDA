@@ -27,8 +27,8 @@ class PropiedadesController extends Controller
      */
     public function create()
     {
-        $propiedades = new Propiedades();
-        return view('propiedades.create', compact('propiedades'));
+        $propiedad = new Propiedades();
+        return view('propiedades.create', compact('propiedad'));
     }
 
     /**
@@ -36,13 +36,24 @@ class PropiedadesController extends Controller
      */
     public function store(PropiedadesRequest $request)
     {
-        
+        return $request->all();
         Propiedades::create($request->validated());
+
+          // Manejar carga de imágenes
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $path = $image->store('public/images');
+                // Aquí puedes también guardar la ruta de la imagen en la base de datos o realizar otras acciones
+            }
+        }
+
+    return redirect()->route('propiedades.index')->with('success', 'Propiedad creada con éxito');
 
         return redirect()->route('propiedades.index')
             ->with('success', 'Propiedade created successfully.');
     }
 
+  
     /**
      * Display the specified resource.
      */
