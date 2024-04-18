@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    <title class="text-lg font-medium">Propiedades</title>
+    <title class="text-lg font-medium">Propiedades hola</title>
 @endsection
 
 @section('content')
@@ -14,12 +14,13 @@
 
                             <span id="card_title">
                                 
-                                {{ __('Propiedades') }}
+                                {{ __('Propiedades') }} ssss
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('propiedades.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                
+                                  <button class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"><a href="{{ route('propiedades.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">{{ __('Create New') }}</a></button>  
+
                                 </a>
                               </div>
                         </div>
@@ -114,7 +115,7 @@
                                       </td>
                                       <td class="p-4 border-b border-blue-gray-50">
                                         <form action="{{ route('propiedades.destroy',$propiedad->id) }}" method="POST">
-                                            <a class="btn btn-sm btn-primary " href="{{ route('propiedades.show',$propiedad->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                            <a class="btn btn-sm btn-primary " href="{{ route('propiedades.show',$propiedad->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a><br>
                                             <a class="btn btn-sm btn-success" href="{{ route('propiedades.edit',$propiedad->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                             @csrf
                                             @method('DELETE')

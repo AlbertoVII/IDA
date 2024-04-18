@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Http\Requests\UserRequest;
+use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Notifications\Notifiable;
 
 /**
  * Class UserController
@@ -11,7 +13,9 @@ use App\Http\Requests\UserRequest;
  */
 class UserController extends Controller
 {
+    use Notifiable, HasRoles;
     /**
+     * 
      * Display a listing of the resource.
      */
     public function index()
