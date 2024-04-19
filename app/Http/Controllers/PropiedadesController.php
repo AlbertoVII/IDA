@@ -11,11 +11,13 @@ use App\Http\Requests\PropiedadesRequest;
  */
 class PropiedadesController extends Controller
 {
+    public $atributo="none";
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
+        $atributo="none";
         $propiedades = Propiedades::paginate();
 
         return view('propiedades.index', compact('propiedades'))
@@ -27,8 +29,9 @@ class PropiedadesController extends Controller
      */
     public function create()
     {
+        $atributo="none";
         $propiedad = new Propiedades();
-        return view('propiedades.create', compact('propiedad'));
+        return view('propiedades.create')->with(compact('propiedad'), $atributo);
     }
 
     /**
@@ -36,7 +39,15 @@ class PropiedadesController extends Controller
      */
     public function store(PropiedadesRequest $request)
     {
-        return $request->all();
+
+        
+        Propiedades::create($request->validated());
+
+        return redirect()->route('propiedades.index')
+            ->with('success', 'Bid created successfully.');
+
+
+        // return $request->all();
         Propiedades::create($request->validated());
 
           // Manejar carga de imágenes
@@ -49,8 +60,8 @@ class PropiedadesController extends Controller
 
     return redirect()->route('propiedades.index')->with('success', 'Propiedad creada con éxito');
 
-        return redirect()->route('propiedades.index')
-            ->with('success', 'Propiedade created successfully.');
+        // return redirect()->route('propiedades.index')
+        //     ->with('success', 'Propiedade created successfully.');
     }
 
   

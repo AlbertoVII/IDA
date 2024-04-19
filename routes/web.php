@@ -20,7 +20,7 @@ Route::resource('files', FileController::class);
 Route::resource('bids', BidController::class);
 Route::resource('mensajes', MensajeController::class);
 
-  
+// Route::post('propiedades/create', [PropiedadesController::class, 'create']); 
 
 Route::get('drag-drop-form', [DragDropController::class, 'form']);
 Route::post('uploadFiles', [DragDropController::class, 'uploadFiles']);
