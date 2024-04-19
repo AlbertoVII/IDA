@@ -2,22 +2,52 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Bid
+ *
+ * @property $id
+ * @property $user_id
+ * @property $propiedad_id
+ * @property $apuesta
+ * @property $created_at
+ * @property $updated_at
+ *
+ * @property Propiedade $propiedade
+ * @property User $user
+ * @package App
+ * @mixin \Illuminate\Database\Eloquent\Builder
+ */
 class Bid extends Model
 {
-    use HasFactory;
+    
 
-    protected $fillable = ['user_id', 'propiedad_id', 'oferta', 'estado'];
+    protected $perPage = 20;
 
-    public function propiedad()
+    /**
+     * Attributes that should be mass-assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['user_id', 'propiedad_id', 'apuesta', 'estado'];
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function propiedade()
     {
-        return $this->belongsTo(Propiedades::class);
+        return $this->belongsTo(\App\Models\Propiedades::class, 'propiedad_id', 'id');
     }
-
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(\App\Models\User::class, 'user_id', 'id');
     }
+    
+
 }

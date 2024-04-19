@@ -9,18 +9,16 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header bg-white max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-7">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
-                            <span id="card_title">
-                                
-                                {{ __('Propiedades') }} 
-                            </span>
+                            <h1 class="px-5 py-4 text-lg">Propiedades</h1>
 
                              <div class="float-right">
-                                
+                                </a>
+                              </div>
+                             <div class="float-right">
                                   <button class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"><a href="{{ route('propiedades.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">{{ __('Create New') }}</a></button>  
-
                                 </a>
                               </div>
                         </div>
@@ -31,7 +29,7 @@
                         </div>
                     @endif
 
-                    <div class="card-body bg-white">
+                    <div class="card-body bg-white max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div class="table-responsive">
                             <div class="p-6 overflow-scroll px-0">
                                 <table class="mt-4 w-full table-auto text-left">
@@ -115,11 +113,11 @@
                                       </td>
                                       <td class="p-4 border-b border-blue-gray-50">
                                         <form action="{{ route('propiedades.destroy',$propiedad->id) }}" method="POST">
-                                            <a class="btn btn-sm btn-primary " href="{{ route('propiedades.show',$propiedad->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a><br>
-                                            <a class="btn btn-sm btn-success" href="{{ route('propiedades.edit',$propiedad->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                            <a class="btn btn-sm btn-primary " href="{{ route('propiedades.show',$propiedad->id) }}"><i class="fa fa-fw fa-eye"></i></a><br>
+                                            <a class="btn btn-sm btn-success" href="{{ route('propiedades.edit',$propiedad->id) }}"><i class="fa fa-fw fa-edit"></i></a><br>
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
+                                            <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i></button>
                                         </form>
                                       </td>
                                     </tr>

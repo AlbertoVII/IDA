@@ -1,13 +1,13 @@
 <?php
 
-use App\Htttp\Controllers;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BidController;
 use App\Http\Controllers\FileController;
+use App\Http\Controllers\MensajeController;
+use App\Http\Controllers\DragDropController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\PropiedadesController;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
-use App\Http\Controllers\DragDropController;
 
 Route::get('/', function () {
     return redirect('/login');
@@ -17,6 +17,8 @@ Route::resource('users', UserController::class)->names('admin.user');
 
 Route::resource('propiedades', PropiedadesController::class);
 Route::resource('files', FileController::class);
+Route::resource('bids', BidController::class);
+Route::resource('mensajes', MensajeController::class);
 
   
 

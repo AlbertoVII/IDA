@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\File;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
 class FileController extends Controller
@@ -31,6 +31,7 @@ class FileController extends Controller
      */
     public function store(Request $request)
     {
+        return $request->all();
         $request->validate([
             'file' => 'required|image|max:2048'
         ]);
@@ -40,7 +41,8 @@ class FileController extends Controller
         $url = Storage::url($imagenes);
 
         File::create([
-            'url' => $url]);
+            'name' =>$imagenes,
+            'ruta' => $url, ]);
 
         
      

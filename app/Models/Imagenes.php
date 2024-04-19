@@ -9,6 +9,12 @@ class Imagenes extends Model
 {
     use HasFactory;
 
+
+    protected $fillable = [
+        'name',
+        'ruta',
+        'id',
+    ];
      /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
