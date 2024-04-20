@@ -133,18 +133,18 @@
             // Dropzone.options.imageUpload = {
             Dropzone.options.image-upload = {
                 
+              addRemoveLinks: true,
+              autoProcessQueue: false,
+              uploadMultiple: true,
+              parallelUploads: 100,
+              maxFiles: 100,
+                maxFilesize         :       23,
+                acceptedFiles: ".jpeg,.jpg,.png,.gif",
                 removedfile: function(file, response){
                     //alert(response);
                     console.log(response);
                     console.log('response');
                 },
-                autoProcessQueue: false,
-                uploadMultiple: true,
-                parallelUploads: 100,
-                maxFiles: 100,
-                maxFilesize         :       23,
-                addRemoveLinks: true,
-                acceptedFiles: ".jpeg,.jpg,.png,.gif",
                 url: "/uploadFiles",
                 
             };

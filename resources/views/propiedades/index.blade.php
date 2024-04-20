@@ -12,11 +12,9 @@
                     <div class="card-header bg-white max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-7">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
-                            <h1 class="px-5 py-4 text-lg">Propiedades</h1>
+                            <h1 class="px-5 text-lg">Propiedades</h1>
 
-                             <div class="float-right">
-                                </a>
-                              </div>
+                        
                              <div class="float-right">
                                   <button class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"><a href="{{ route('propiedades.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">{{ __('Create New') }}</a></button>  
                                 </a>
