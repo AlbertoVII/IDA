@@ -21,11 +21,7 @@ Route::resource('imagenes', ImagenesController::class);
 Route::resource('bids', BidController::class);
 Route::resource('mensajes', MensajeController::class);
 
-<<<<<<< HEAD
 Route::resource('users', UserController::class);
-=======
-// Route::post('propiedades/create', [PropiedadesController::class, 'create']); 
->>>>>>> e46cd55110e6b1bb0c23d7f3cad1fa2410438bc1
 
 Route::get('drag-drop-form', [DragDropController::class, 'form']);
 Route::post('uploadFiles', [DragDropController::class, 'uploadFiles']);
