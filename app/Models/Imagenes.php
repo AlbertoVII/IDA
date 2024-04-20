@@ -11,15 +11,14 @@ class Imagenes extends Model
 
 
     protected $fillable = [
-        'name',
-        'ruta',
-        'id',
+        'inmueble',
+        'ruta'
     ];
      /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function Imagenes()
     {
-        return $this->belongsTo(\App\Models\Propiedades::class, 'cliente_id', 'id');
+        return $this->belongsTo(\App\Models\Propiedades::class, 'id', 'inmueble');
     }
 }

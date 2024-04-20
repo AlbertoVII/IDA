@@ -18,7 +18,6 @@ return new class extends Migration
             $table->decimal('precio', 10, 2);
             $table->string('direccion');
             $table->unsignedBigInteger('cliente_id')->nullable();
-            $table->string('imagen')->nullable(); // Campo para la ruta de la imagen
             $table->timestamps();
             $table->foreign('cliente_id')->references('id')->on('clientes')->onDelete('cascade');
         });

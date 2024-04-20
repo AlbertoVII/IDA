@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Propiedades;
+use App\Models\Imagenes;
 use App\Http\Requests\PropiedadesRequest;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * Class PropiedadeController
@@ -36,9 +39,14 @@ class PropiedadesController extends Controller
      */
     public function store(PropiedadesRequest $request)
     {
-        return $request->all();
-        Propiedades::create($request->validated());
-
+      
+        // return $validatedData;
+        // return $request->all();
+        $test = Propiedades::create($request->validated());
+        $inmueble = $test->id;
+        // return redirect()->route('propiedades.edit')->with('id', $inmueble);
+        return $this->edit($inmueble);
+        return redirect()->route('propiedades.index')->with('success', 'Propiedad creada con éxito');
           // Manejar carga de imágenes
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
@@ -47,10 +55,10 @@ class PropiedadesController extends Controller
             }
         }
 
-    return redirect()->route('propiedades.index')->with('success', 'Propiedad creada con éxito');
+        // return redirect()->route('propiedades.index')->with('success', 'Propiedad creada con éxito');
 
-        return redirect()->route('propiedades.index')
-            ->with('success', 'Propiedade created successfully.');
+        // return redirect()->route('propiedades.index')
+        //     ->with('success', 'Propiedade created successfully.');
     }
 
   
@@ -68,10 +76,19 @@ class PropiedadesController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit($id)
+
     {
         $propiedad = Propiedades::find($id);
-
-        return view('propiedades.edit', compact('propiedad'));
+        // $imagenes=Imagenes::find($id);
+        // $imagenes= DB::table('imagenes')->where('inmueble',$id);
+       // $user = Imagenes::with('Profile')->where('status', '1')->get();
+       $imagenes=Imagenes::where('inmueble',$id)->get(); 
+       $data=[
+            'propiedad'=> $propiedad,
+            'imagenes'=> $imagenes            
+        ];
+       Storage::put('public/file.txt', json_encode($data));
+        return view('propiedades.edit', compact('data'));
     }
 
     /**
@@ -79,6 +96,7 @@ class PropiedadesController extends Controller
      */
     public function update(PropiedadesRequest $request, Propiedades $propiedade)
     {
+        
         $propiedade->update($request->validated());
 
         return redirect()->route('propiedades.index')

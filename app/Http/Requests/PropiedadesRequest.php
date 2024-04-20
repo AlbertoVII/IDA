@@ -21,11 +21,13 @@ class PropiedadesRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-			'title' => 'required|string',
-        'description' => 'required|string',
-        'price' => 'required|numeric',
-        'images.*' => 'image|mimes:jpg,jpeg,png,gif|max:10240',
-        ];
+         return [
+	   'titulo' => 'required|string',
+        'descripcion' => 'required|string',
+        'precio' => 'required|numeric',
+        'direccion' => 'required|string'
+        
+        // 'images.*' => 'image|mimes:jpg,jpeg,png,gif|max:10240',
+         ];
     }
 }

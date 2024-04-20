@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Imagenes;
 use Illuminate\Http\Request;
 
 class ImagenesController extends Controller
@@ -57,8 +58,16 @@ class ImagenesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    // public function destroy(string $id)
+    // {
+    //     //
+    // }
+    public function destroy($id)
     {
-        //
+        Imagenes::find($id)->delete();
+        return back();
+
+        // return redirect()->route('propiedades.index')
+        //     ->with('success', 'Propiedade deleted successfully');
     }
 }

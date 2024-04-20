@@ -7,6 +7,7 @@ use App\Http\Controllers\MensajeController;
 use App\Http\Controllers\DragDropController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\ImagenesController;
 use App\Http\Controllers\PropiedadesController;
 
 Route::get('/', function () {
@@ -16,7 +17,7 @@ Route::get('/', function () {
 Route::resource('users', UserController::class)->names('admin.user');
 
 Route::resource('propiedades', PropiedadesController::class);
-Route::resource('files', FileController::class);
+Route::resource('imagenes', ImagenesController::class);
 Route::resource('bids', BidController::class);
 Route::resource('mensajes', MensajeController::class);
 

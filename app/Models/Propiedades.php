@@ -60,7 +60,7 @@ class Propiedades extends Model
      */
     public function imagenes()
     {
-        return $this->hasMany(\App\Models\Bid::class, 'id', 'propiedad_id');
+        return $this->hasMany(\App\Models\Imagenes::class, 'id', 'propiedad_id');
     }
     
     /**
