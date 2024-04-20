@@ -14,11 +14,13 @@ use Illuminate\Support\Facades\Storage;
  */
 class PropiedadesController extends Controller
 {
+    public $atributo="none";
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
+        $atributo="none";
         $propiedades = Propiedades::paginate();
 
         return view('propiedades.index', compact('propiedades'))
@@ -30,8 +32,9 @@ class PropiedadesController extends Controller
      */
     public function create()
     {
+        $atributo="none";
         $propiedad = new Propiedades();
-        return view('propiedades.create', compact('propiedad'));
+        return view('propiedades.create')->with(compact('propiedad'), $atributo);
     }
 
     /**
@@ -39,14 +42,17 @@ class PropiedadesController extends Controller
      */
     public function store(PropiedadesRequest $request)
     {
-      
-        // return $validatedData;
+
+        
+        Propiedades::create($request->validated());
+
+        return redirect()->route('propiedades.index')
+            ->with('success', 'Bid created successfully.');
+
+
         // return $request->all();
-        $test = Propiedades::create($request->validated());
-        $inmueble = $test->id;
-        // return redirect()->route('propiedades.edit')->with('id', $inmueble);
-        return $this->edit($inmueble);
-        return redirect()->route('propiedades.index')->with('success', 'Propiedad creada con éxito');
+        Propiedades::create($request->validated());
+
           // Manejar carga de imágenes
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
