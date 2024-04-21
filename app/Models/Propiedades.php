@@ -37,7 +37,7 @@ class Propiedades extends Model
      *
      * @var array
      */
-    protected $fillable = ['titulo', 'descripcion', 'precio', 'direccion', 'cliente_id', 'imagen'];
+    protected $fillable = ['titulo', 'descripcion', 'precio', 'direccion', 'cliente_id', 'imagenes', 'habitaciones', 'baños', 'plantas', 'tipo', 'tamaño'];
 
 
     /**

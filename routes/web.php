@@ -2,17 +2,26 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BidController;
-use App\Http\Controllers\FileController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MensajeController;
 use App\Http\Controllers\DragDropController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\ImagenesController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PropiedadesController;
 
+// Route::get('/', function () {
+//     return redirect('/login');
+// });
 Route::get('/', function () {
-    return redirect('/login');
+    return view('login.main');
 });
+
+
+// Ruta para mostrar la vista de login
+
+Route::get('main', [LoginController::class, 'main'])->name('main');
+Route::get('portal', [LoginController::class, 'index'])->name('portal');
 
 Route::resource('users', UserController::class)->names('admin.user');
 
@@ -31,8 +40,18 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
     ])->group(function () {
-    Route::get('dashboard', [DashboardController::class, 'index'])->middleware('can')->name('dashboard');
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::resource('dashboard', DashboardController::class)->names([
+        'index'   => 'dashboard',
+        'create'  => 'dashboard.create',
+        'store'   => 'dashboard.store',
+        'show'    => 'dashboard.show',
+        'edit'    => 'dashboard.edit',
+        'update'  => 'dashboard.update',
+        'destroy' => 'dashboard.destroy',
+    ]);;
+    // Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    // Route::get('/dashboard', function () {
+    //     return view('dashboard');
+    // })->name('dashboard');
+    
 });

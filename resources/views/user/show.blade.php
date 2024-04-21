@@ -9,46 +9,60 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+                    <div class="card-header" style="padding: 20px; display: flex; justify-content: space-between; align-items: center;">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} User</span>
+                            <span class="text-xl font-semibold block">{{ __('Show') }} User</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary btn-sm" href="{{ route('users.index') }}"> {{ __('Back') }}</a>
+                            <a href="{{ route('users.index') }}" class="-mt-2 text-md font-bold text-white bg-gray-700 rounded-full px-5 py-2 hover:bg-gray-800">{{ __('Back') }}</a>
                         </div>
                     </div>
-
+                    
                     <div class="card-body bg-white">
                         
-                        <div class="form-group mb-2 mb20">
-                            <strong>Name:</strong>
-                            {{ $user->name }}
-                        </div>
-                        <div class="form-group mb-2 mb20">
-                            <strong>Email:</strong>
-                            {{ $user->email }}
-                        </div>
-                        <div class="form-group mb-2 mb20">
-                            <strong>Two Factor Secret:</strong>
-                            {{ $user->two_factor_secret }}
-                        </div>
-                        <div class="form-group mb-2 mb20">
-                            <strong>Two Factor Recovery Codes:</strong>
-                            {{ $user->two_factor_recovery_codes }}
-                        </div>
-                        <div class="form-group mb-2 mb20">
-                            <strong>Two Factor Confirmed At:</strong>
-                            {{ $user->two_factor_confirmed_at }}
-                        </div>
-                        <div class="form-group mb-2 mb20">
-                            <strong>Current Team Id:</strong>
-                            {{ $user->current_team_id }}
-                        </div>
-                        <div class="form-group mb-2 mb20">
-                            <strong>Profile Photo Path:</strong>
-                            {{ $user->profile_photo_path }}
-                        </div>
+                                                    <!-- component -->
+                            <!-- This is an example component -->
 
+                            <div class="h-full">
+                            
+                                <div class="border-b-2 block md:flex">
+                            
+                                <div class="w-full md:w-2/5 p-4 sm:p-6 lg:p-8 bg-white shadow-md">
+                                    <div class="flex justify-between">
+                                    <span class="text-xl font-semibold block">Admin Profile</span>
+                                    <a href="{{ route('users.edit', $user->id) }}" class="-mt-2 text-md font-bold text-white bg-gray-700 rounded-full px-5 py-2 hover:bg-gray-800">Edit</a>
+                                    </div>
+                            
+                                    <span class="text-gray-600">This information is secret so be careful</span>
+                                    <div class="w-full p-8 mx-2 flex justify-center">
+                                    <img id="showImage" class="max-w-xs w-32 items-center border" src="https://images.unsplash.com/photo-1477118476589-bff2c5c4cfbb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=200" alt="">                          
+                                    </div>
+                                </div>
+                                
+                                <div class="w-full md:w-3/5 p-8 bg-white lg:ml-4 shadow-md">
+                                    <div class="rounded  shadow p-6">
+                                    <div class="pb-6">
+                                        <label for="name" class="font-semibold text-gray-700 block pb-1">Name</label>
+                                        <div class="flex">
+                                        <input disabled id="username" class="border-1  rounded-r px-4 py-2 w-full" type="text" value="{{ $user->name }}" />
+                                        </div>
+                                    </div>
+                                    <div class="pb-4">
+                                        <label for="about" class="font-semibold text-gray-700 block pb-1">Email</label>
+                                        <input disabled id="email" class="border-1  rounded-r px-4 py-2 w-full" type="email" value="{{ $user->email }}" />
+                                        <span class="text-gray-600 pt-4 block opacity-70">Personal login information of your account</span>
+                                    </div>
+                                    <div class="pb-4">
+                                        <label for="about" class="font-semibold text-gray-700 block pb-1">Profile Photo Path:</label>
+                                        <input disabled id="photo" class="border-1  rounded-r px-4 py-2 w-full" type="email" value="{{ $user->profile_photo_path }}" />
+                                        <span class="text-gray-600 pt-4 block opacity-70">Personal Photo information of your account</span>
+                                    </div>
+                                    </div>
+                                </div>
+                            
+                                </div>
+                            
+                            </div>
                     </div>
                 </div>
             </div>

@@ -2,43 +2,26 @@
     <div class="col-md-12">
         
         <div class="form-group mb-2 mb20">
-            <label for="name" class="form-label">{{ __('Name') }}</label>
-            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name', $user?->name) }}" id="name" placeholder="Name">
+            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('Name') }}</label>
+            <input type="text" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Name" required />
             {!! $errors->first('name', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="email" class="form-label">{{ __('Email') }}</label>
-            <input type="text" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email', $user?->email) }}" id="email" placeholder="Email">
+            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('Email') }}</label>
+            <input name="email" type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 @error('email') is-invalid @enderror" value="{{ old('email', $user?->email) }}" placeholder="name@mail.com" required />
             {!! $errors->first('email', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="two_factor_secret" class="form-label">{{ __('Two Factor Secret') }}</label>
-            <input type="text" name="two_factor_secret" class="form-control @error('two_factor_secret') is-invalid @enderror" value="{{ old('two_factor_secret', $user?->two_factor_secret) }}" id="two_factor_secret" placeholder="Two Factor Secret">
-            {!! $errors->first('two_factor_secret', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
-        </div>
-        <div class="form-group mb-2 mb20">
-            <label for="two_factor_recovery_codes" class="form-label">{{ __('Two Factor Recovery Codes') }}</label>
-            <input type="text" name="two_factor_recovery_codes" class="form-control @error('two_factor_recovery_codes') is-invalid @enderror" value="{{ old('two_factor_recovery_codes', $user?->two_factor_recovery_codes) }}" id="two_factor_recovery_codes" placeholder="Two Factor Recovery Codes">
-            {!! $errors->first('two_factor_recovery_codes', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
-        </div>
-        <div class="form-group mb-2 mb20">
-            <label for="two_factor_confirmed_at" class="form-label">{{ __('Two Factor Confirmed At') }}</label>
-            <input type="text" name="two_factor_confirmed_at" class="form-control @error('two_factor_confirmed_at') is-invalid @enderror" value="{{ old('two_factor_confirmed_at', $user?->two_factor_confirmed_at) }}" id="two_factor_confirmed_at" placeholder="Two Factor Confirmed At">
-            {!! $errors->first('two_factor_confirmed_at', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
-        </div>
-        <div class="form-group mb-2 mb20">
-            <label for="current_team_id" class="form-label">{{ __('Current Team Id') }}</label>
-            <input type="text" name="current_team_id" class="form-control @error('current_team_id') is-invalid @enderror" value="{{ old('current_team_id', $user?->current_team_id) }}" id="current_team_id" placeholder="Current Team Id">
-            {!! $errors->first('current_team_id', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
-        </div>
-        <div class="form-group mb-2 mb20">
             <label for="profile_photo_path" class="form-label">{{ __('Profile Photo Path') }}</label>
-            <input type="text" name="profile_photo_path" class="form-control @error('profile_photo_path') is-invalid @enderror" value="{{ old('profile_photo_path', $user?->profile_photo_path) }}" id="profile_photo_path" placeholder="Profile Photo Path">
+            <input type="text" name="profile_photo_path" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 @error('profile_photo_path') is-invalid @enderror" value="{{ old('profile_photo_path', $user?->profile_photo_path) }}" id="profile_photo_path" placeholder="Profile Photo Path">
             {!! $errors->first('profile_photo_path', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
 
     </div>
+
+
+  
     <div class="col-md-12 mt20 mt-2">
-        <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
+        <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">{{ __('Submit') }}</button>
     </div>
 </div>

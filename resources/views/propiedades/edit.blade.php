@@ -10,12 +10,12 @@
 
 @section('content')
     <section class="content container-fluid">
-        <div class="">
+        <div class="row">
             <div class="col-md-12">
                 
-        {{$identificador}}
-                <div class="card card-default">
-                    <div class="card-header">
+       {{-- {{$identificador}} --}}
+                <div class="card">
+                    <div class="card-header bg-white max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-7">
                         <span class="card-title">{{ __('Update') }} propiedad</span>
                     </div>
                     <div class="card-body bg-white">
@@ -104,8 +104,7 @@
                   <td class="p-4 border-b border-blue-gray-50">
                     <div class="flex items-center gap-3">
                       <div class="flex flex-col">
-                        <p class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal"><img src="{{asset('storage/images/'.$propiedad->ruta) }}" alt="" class='thumb'></p>
-                        <input type="hidden" value={{$propiedad->ruta}}
+                        <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900"><img src="{{asset('storage/images/'.$propiedad->ruta) }}" alt="" class='thumb' style='max-width: 100px; max-height: 100px;'></p><input type="hidden" value={{$propiedad->ruta}}/>
                         {{-- <p class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal opacity-70">{{asset('storage/images/'.$propiedad->ruta) }}</p> --}}
                       </div>
                     </div>
@@ -131,22 +130,17 @@
 @section('js')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/min/dropzone.min.js"></script>
         <script type="text/javascript">
-            // Dropzone.options.imageUpload = {
-            Dropzone.options.image-upload = {
+         //    Dropzone.options.imageUpload = {
+           Dropzone.options.image-upload = {
                 
               addRemoveLinks: true,
               autoProcessQueue: false,
               uploadMultiple: true,
               parallelUploads: 100,
               maxFiles: 100,
-                maxFilesize         :       23,
-                acceptedFiles: ".jpeg,.jpg,.png,.gif",
-                removedfile: function(file, response){
-                    //alert(response);
-                    console.log(response);
-                    console.log('response');
-                },
-                url: "/uploadFiles",
+              maxFilesize : 23,
+              acceptedFiles: ".jpeg,.jpg,.png,.gif",
+              url: "/uploadFiles",
                 
             };
            

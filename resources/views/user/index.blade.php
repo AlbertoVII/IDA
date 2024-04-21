@@ -12,7 +12,7 @@
                   <div class="card-header  max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-7">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
                       
-                      <title class="text-lg px-5 py-4 text-lg">Propiedades</title>
+                      <span class="text-xl font-semibold block">Usuarios</span>
                       
                       <div class="float-right">
                                 </a>
@@ -112,9 +112,9 @@
                                      
                                      
                                       <td class="p-4 border-b border-blue-gray-50">
-                                        <form action="{{ route('propiedades.destroy',$user->id) }}" method="POST">
-                                            <a class="btn btn-sm btn-primary " href="{{ route('propiedades.show',$user->id) }}"><i class="fa fa-fw fa-eye"></i></a><br>
-                                            <a class="btn btn-sm btn-success" href="{{ route('propiedades.edit',$user->id) }}"><i class="fa fa-fw fa-edit"></i></a><br>
+                                        <form action="{{ route('users.destroy',$user->id) }}" method="POST">
+                                            <a class="btn btn-sm btn-primary " href="{{ route('users.show',$user->id) }}"><i class="fa fa-fw fa-eye"></i></a><br>
+                                            <a class="btn btn-sm btn-success" href="{{ route('users.edit',$user->id) }}"><i class="fa fa-fw fa-edit"></i></a><br>
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i></button>
